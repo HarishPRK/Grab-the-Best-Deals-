@@ -1,0 +1,428 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --font-size-base: 16px;
+    --spacing-base: 1rem;
+  }
+  
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: url('/OIG2.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Adding overlay for transparency effect */
+body::after {
+    content: '';
+    position: fixed; /* Fixed position to cover viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); /* White background with transparency */
+    z-index: 0; /* Ensure it's behind content */
+}
+
+/* Ensuring content is visible above the overlay */
+.container, .navbar, footer.footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Styling for the product items */
+.product-item {
+    flex: 0 1 calc(25% - 40px); /* Adjusted for bigger size */
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff; /* Optional: for better readability against the overlay */
+    border-radius: 4px; /* Optional: for styled corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.6); /* Optional: for a subtle shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+/* Progress bar margin adjustment */
+.progress {
+    margin-bottom: 15px; /* Space between progress bar and button */
+}
+
+/* Smaller footer adjustment */
+footer.footer {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 0; /* Reduced padding */
+    font-size: 1 rem; /* Optional: Adjust font size as needed */
+    text-align: center;
+    width: 100%;
+    height: 20%;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+}
+
+body {
+    padding-top: 70px; /* Adjust this value based on the actual height of your navbar */
+}
+
+
+
+/* Flex container adjustments */
+.navbar-brand img {
+    max-height: 40px; /* Reduce this value as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-item {
+        flex: 0 1 calc(50% - 20px); /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        flex: 0 1 calc(100% - 10px); /* Full width on very small screens */
+    }
+}
+
+.product-item img {
+    max-width: 100%; /* Ensures the image is not wider than its container */
+    max-height: 150px; /* Adjust this value to scale down the image size */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Removes extra space below the image */
+    margin: 0 auto; /* Centers the image within the div */
+}
+
+.product-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Align items from the start */
+    justify-content: flex-start; /* Align content to the start */
+    padding: 10px; /* Uniform padding inside the div */
+    width: calc(200% / 3); /* Example to make width twice the length of the height */
+    height: auto; /* Height adjusts based on content */
+    aspect-ratio: 2 / 1; /* Ensures width is twice the height */
+}
+
+.product-item img {
+    flex: 1 1 50%; /* Image takes half the width of the container */
+    max-width: 100%; /* Ensures the image is fully responsive */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.product-details {
+    flex: 1 1 50%; /* Details take the remaining half */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distributes space evenly around content */
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adjust as needed for spacing between products */
+    background: #FFFFFF; /* or any color you wish to have */
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.product-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 50%;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100px; /* Adjust as needed */
+    height: auto;
+}
+
+.product-details {
+    flex: 1;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.progress-bar {
+    width: 100%;
+    margin: 10px 0; /* Adjust as needed for spacing */
+    /* Additional styles for your progress bar */
+}
+
+.buy-now-btn {
+    padding: 10px 20px;
+    margin-top: 10px; /* Adjust as needed for spacing */
+    background-color: #0066cc; /* Example color */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Adjustments for uniform spacing */
+.product-item > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.product-item {
+    display: flex;
+    width: 60%; /* Adjust width as necessary to fit your design */
+    margin: 20px auto; /* This centers the .product-item horizontally */
+    background: #FFFFFF; /* Or any preferred color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional shadow for better visibility */
+}
+
+.product-image, .product-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Both children will take up equal space in the .product-item */
+}
+
+.product-image {
+    flex: 0 0 50%; /* Assigns 50% of the width to the image container */
+}
+
+.product-image img {
+    max-width: 100%; /* Ensures the image is responsive within its container */
+    max-height: 200px; /* Example maximum height for the image */
+}
+
+.product-details {
+    padding: 20px; /* Adds padding inside the details container */
+    flex: 1; /* Takes the remaining space in the .product-item container */
+    display: flex;
+    flex-direction: column;
+}
+
+/* If you want to center the text and other elements inside .product-details vertically */
+.product-details > * {
+    margin: 10px 0; /* Adds vertical spacing between the elements */
+}
+
+/* Additional styles for your .progress-bar and .buy-now-btn */
+.product-item {
+    display: flex;
+    width: 60%; /* Reduce the width as needed */
+    margin: 20px auto; /* Keep it centered with auto margins */
+    background: #FFFFFF; /* Or any preferred color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional shadow for better visibility */
+}
+
+.product-image, .product-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Reduce padding if needed */
+}
+
+.product-image {
+    flex: 0 0 40%; /* Reduce the flex-basis as needed */
+    margin-right: 10px; /* Reduce space between image and details */
+}
+
+.product-image img {
+    max-width: 100%; /* Ensures the image is responsive within its container */
+    height: auto;
+}
+
+.product-details {
+    flex: 1; /* Takes the remaining space in the .product-item container */
+    padding: 0px; /* You can adjust the padding if needed */
+}
+
+.product-item {
+    display: flex;
+    width: auto; /* Set a specific size for width */
+    height: auto; /* Set the same size for height to make it square */
+    margin: 20px auto; /* Keep it centered with auto margins */
+    background: rgba(255, 255, 255);/* Or any preferred color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional shadow for better visibility */
+    align-items: center; /* Center the items vertically */
+    justify-content: center; /* Center the items horizontally */
+}
+
+.product-image, .product-details {
+    padding: 10px; /* Adjust padding as needed */
+}
+
+.product-image {
+    flex: 1; /* Allows image to fill half the space of .product-item */
+    max-width: 100%; /* Limits image width to half of .product-item */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    max-width: 100%; /* Ensures the image is responsive within its container */
+    max-height: 100%; /* Ensures the image height does not exceed the container */
+    height: auto; /* Maintains aspect ratio */
+    padding: 20px;
+}
+
+.product-details {
+    flex: 1; /* Takes the remaining space in the .product-item container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Aligns text to the start (left) */
+    padding: 10px; /* Adjust padding as needed */
+    text-align: left; /* Ensures all text inside is aligned to the left */
+}
+
+.product-details h3 {
+    font-weight: bold; /* Makes the h3 text bold */
+    margin-bottom: 10px; /* Adds a bit of margin below the heading */
+}
+
+/* Your other styles, such as for .progress-bar and .buy-now-btn */
+.product-item {
+    display: flex;
+    width: auto; /* Adjust the width as needed */
+    height: auto; /* Adjust the height as needed */
+    margin: 20px auto; /* Centers the item with automatic margins on the sides */
+    background: #FFFFFF; /* Set a solid color background */
+    z-index: 2; /* Higher than the z-index of body::after to prevent transparency inheritance */
+    position: relative; /* Required to make z-index effective */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional shadow for better visibility */
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Ensures content aligns to the start (left) */
+    text-align: left; /* Aligns text to the left */
+    flex: 1;
+    padding: 10px; /* Adjust padding as needed */
+}
+
+.product-details h3 {
+    font-weight: bold; /* Makes the h3 tag text bold */
+    margin-bottom: 0.5em; /* Provides space below the heading */
+}
+
+.product-details p {
+    margin: 0.25em 0; /* Provides uniform spacing around paragraphs */
+    text-align: left;
+}
+
+.buy-now-btn {
+    /* Add your styles for the Buy Now button */
+    align-self: center; /* Centers the button if needed, or remove to align left */
+}
+
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns content to the start (left) of the container */
+    padding: 10px; /* Adjust padding as needed */
+    flex: 1;
+}
+
+.product-details h3, .product-details p, .product-details .buy-now-btn {
+    text-align: left; /* Aligns text to the left */
+    align-self: flex-start; /* Aligns elements to the start (left) of the flex container */
+    width: 100%; /* Forces elements to take the full width of the container */
+}
+
+.product-details h3 {
+    font-weight: bold; /* Makes the h3 text bold */
+    margin: 0 0 10px 0; /* Adds space below the heading */
+}
+
+.buy-now-btn {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    padding: 10px 20px; /* Provides padding inside the button */
+    background-color: #0066cc; /* Example button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px; /* Rounds the corners of the button */
+    font-size: 1rem; /* Adjust the font size as needed */
+    text-decoration: none; /* Removes underline from text if the button is a link */
+    width: auto; /* Allows the width to adjust to the content - can be set to a specific width if preferred */
+    max-width: 150px;
+    height: 40px; /* Set a specific height for the button */
+}
+
+@media screen and (max-width: 768px) {
+    .product-item {
+        flex-direction: column; /* Stack the elements vertically */
+        width: 100%; /* Make the product item full width on smaller screens */
+    }
+
+    .product-image, .product-details {
+        width: 100%; /* Full width for both the image and the details */
+    }
+
+    .product-details {
+        order: 2; /* Ensures that the details appear after the image */
+    }
+
+    .product-image {
+        order: 1; /* Ensures that the image appears before the details */
+        max-width: 100%; /* Ensures the image is not larger than the container */
+        max-height: 200px; /* Sets a maximum height for the image */
+    }
+}
+
+
+.buy-now-btn {
+    /* ... existing styles ... */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-now-btn:hover {
+    background-color: #0056b3; /* Darken button color on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Shadow effect for depth */
+}
+
+.product-item {
+    /* ... existing styles ... */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: 0.2s; /* Can be adjusted per item for a 'staggered' effect */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
